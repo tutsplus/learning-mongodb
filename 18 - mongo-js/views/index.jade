@@ -1,0 +1,17 @@
+form(method="POST")
+  p Name:
+    input(type="text", name="name")
+  p Job:
+    input(type="text", name="job")
+  p: button Add
+
+if people.length > 0
+  ul
+    each person in people
+      li
+        h2= person.name + "(" + person.job + ")"
+        p
+          a(href="/update/#{person._id}") Update
+          a(href="/delete/#{person._id}") Delete
+else 
+  p No People
