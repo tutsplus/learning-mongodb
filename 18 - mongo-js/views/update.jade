@@ -1,6 +1,8 @@
 form(method="POST")
-  p Name:
-    input(type="text", name="name", value="#{person.name}")
-  p Job:
-    input(type="text", name="job", value="#{person.job}")
-  p: button Update
+	p First Name:
+		input(type="text", name="firstName", value="#{person.name.first}")
+	p Last Name:
+		input(type="text", name="lastName", value="#{person.name.last}") 
+	p Job:
+		input(type="text", name="job", value="#{person.job}")
+	p: button Update
