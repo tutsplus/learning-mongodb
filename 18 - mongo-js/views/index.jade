@@ -1,17 +1,19 @@
 form(method="POST")
-  p Name:
-    input(type="text", name="name")
-  p Job:
-    input(type="text", name="job")
-  p: button Add
+	p First Name:
+		input(type='text', name='firstName')
+	p Last Name:
+		input(type='text', name='lastName')
+	p Job:
+		input(type='text', name='job')
+	p: button(class='btn btn-default') Add
 
 if people.length > 0
-  ul
-    each person in people
-      li
-        h2= person.name + "(" + person.job + ")"
-        p
-          a(href="/update/#{person._id}") Update
-          a(href="/delete/#{person._id}") Delete
-else 
-  p No People
+	ul
+		each person in people
+			li
+				h2= person.name.first + ' ' + person.name.last + ' / ' + person.job
+				p
+					a(href="/update/#{person._id}") Update
+					a(href="/delete/#{person._id}") Delete
+else
+	p no people
